@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 	"time"
-
+	"strconv"
 	"github.com/lgtmco/lgtm/router"
 	"github.com/lgtmco/lgtm/router/middleware"
 
@@ -14,7 +14,7 @@ import (
 )
 
 var (
-	addr = envflag.String("SERVER_ADDR", ":8000", "")
+	env_port = envflag.Int("PORT", 8000, "port envvar")
 	cert = envflag.String("SERVER_CERT", "", "")
 	key  = envflag.String("SERVER_KEY", "", "")
 
@@ -40,11 +40,11 @@ func main() {
 
 	if *cert != "" {
 		logrus.Fatal(
-			http.ListenAndServeTLS(*addr, *cert, *key, handler),
+			http.ListenAndServeTLS(":" + strconv.Itoa(*env_port), *cert, *key, handler),
 		)
 	} else {
 		logrus.Fatal(
-			http.ListenAndServe(*addr, handler),
+			http.ListenAndServe(":" + strconv.Itoa(*env_port), handler),
 		)
 	}
 }
