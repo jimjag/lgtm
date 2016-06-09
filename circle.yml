@@ -7,17 +7,13 @@ checkout:
     - mkdir -p /home/ubuntu/.go_workspace/src/github.com/lgtmco
     - ln -s /home/ubuntu/lgtm /home/ubuntu/.go_workspace/src/github.com/lgtmco/lgtm
     - cp -R /home/ubuntu/lgtm/vendor/github.com/* /home/ubuntu/.go_workspace/src/github.com/
+    - cp -rf /home/ubuntu/lgtm/vendor/golang.org /home/ubuntu/.go_workspace/src/golang.org
+    - cp -rf /home/ubuntu/lgtm/vendor/gopkg.in /home/ubuntu/.go_workspace/src/gopkg.in
+    
 
 dependencies:
   override:
-    - go get -u github.com/jteeuwen/go-bindata/...
-    - go get -u github.com/elazarl/go-bindata-assetfs/...
     - go get -u github.com/vektra/mockery/...
-    - go get -u github.com/Sirupsen/logrus/...
-    - go get -u github.com/gin-gonic/contrib/ginrus
-    - go get -u github.com/ianschenck/envflag/... 
-    - go get -u github.com/joho/godotenv/...
-    - go get -u github.com/BurntSushi/toml
     - make gen
     - GOOS=linux GOARCH=amd64 go build -o lgtm
 
