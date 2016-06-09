@@ -16,6 +16,7 @@ dependencies:
     - go get -u github.com/gin-gonic/contrib/ginrus
     - go get -u github.com/ianschenck/envflag/... 
     - go get -u github.com/joho/godotenv/...
+    - go get -u github.com/BurntSushi/toml
     - make gen
     - GOOS=linux GOARCH=amd64 go build -o lgtm
 
