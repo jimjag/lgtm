@@ -3,9 +3,10 @@ machine:
     APP_NAME: lgtm
 
 dependencies:
-  override:
+  pre:
     - mkdir -p /home/ubuntu/.go_project/src/github.com/lgtmco
     - ln -s /home/ubuntu/lgtm /home/ubuntu/.go_project/src/github.com/lgtmco/lgtm
+  override:
     - go get -u github.com/jteeuwen/go-bindata/...
     - go get -u github.com/elazarl/go-bindata-assetfs/...
     - go get -u github.com/vektra/mockery/...
