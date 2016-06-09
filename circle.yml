@@ -28,10 +28,10 @@ deployment:
       - curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github'
       - sudo dpkg -i cf-cli_amd64.deb
       - cf -v
-      - cf api $CF_API_DEV 2>&1 /dev/null
+      - cf api $CF_API_DEV &> /dev/null
       - cf auth $CF_STAGING_USER $CF_STAGING_PASSWORD &> /dev/null
-      - cf target -o $CF_ORG_DEV 2>&1 /dev/null
-      - cf target -s $CF_SPACE_DEV 2>&1 /dev/null
-      - cf push $APP_NAME 2>&1 /dev/null
+      - cf target -o $CF_ORG_DEV &> /dev/null
+      - cf target -s $CF_SPACE_DEV &> /dev/null
+      - cf push $APP_NAME &> /dev/null
 
 
