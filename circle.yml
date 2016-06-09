@@ -4,8 +4,7 @@ machine:
 
 dependencies:
   pre:
-    - mkdir -p /home/ubuntu/.go_project/src/github.com/lgtmco
-    - ln -s /home/ubuntu/lgtm /home/ubuntu/.go_project/src/github.com/lgtmco/lgtm
+    - ln -s /home/ubuntu/.go_project/src/github.com/AusDTO /home/ubuntu/.go_project/src/github.com/lgtmco
   override:
     - go get -u github.com/jteeuwen/go-bindata/...
     - go get -u github.com/elazarl/go-bindata-assetfs/...
