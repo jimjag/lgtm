@@ -18,13 +18,6 @@ dependencies:
     - make gen
     - GOOS=linux GOARCH=amd64 go build -o lgtm
 
-test:
-  pre:
-    - make test
-
-  override:
-    - make test
-
 deployment:
   staging:
     branch: /.*/
