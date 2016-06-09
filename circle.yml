@@ -1,0 +1,29 @@
+machine:
+  environment:
+    APP_NAME: lgtm
+
+dependencies:
+  override:
+    - go get -u github.com/jteeuwen/go-bindata/...
+    - go get -u github.com/elazarl/go-bindata-assetfs/...
+    - go get -u github.com/vektra/mockery/...
+    - GOOS=linux GOARCH=386 go build -o lgtm
+
+test:
+  pre:
+    - make test
+
+  override:
+    - make test
+
+deployment:
+  staging:
+    branch: /.*/
+    commands:
+      - cf api $CF_API_DEV
+      - cf auth $CF_STAGING_USER $CF_STAGING_PASSWORD
+      - cf target -o $CF_ORG_DEV
+      - cf target -s $CF_SPACE_DEV
+      - cf push $APP_NAME 
+
+
