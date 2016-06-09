@@ -2,9 +2,11 @@ machine:
   environment:
     APP_NAME: lgtm
 
-dependencies:
-  pre:
+checkout:
+  post:
     - ln -s /home/ubuntu/.go_project/src/github.com/AusDTO /home/ubuntu/.go_project/src/github.com/lgtmco
+
+dependencies:
   override:
     - go get -u github.com/jteeuwen/go-bindata/...
     - go get -u github.com/elazarl/go-bindata-assetfs/...
