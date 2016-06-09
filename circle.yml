@@ -14,7 +14,7 @@ dependencies:
     - go get -u github.com/lgtmco/lgtm/router/...
     - go get -u github.com/lgtmco/lgtm/router/middleware/...
     - make gen
-    - GOOS=linux GOARCH=386 go build -o lgtm
+    - GOOS=linux GOARCH=amd64 go build -o lgtm
 
 test:
   pre:
