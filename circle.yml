@@ -9,7 +9,6 @@ checkout:
     - cp -R /home/ubuntu/lgtm/vendor/github.com/* /home/ubuntu/.go_workspace/src/github.com/
     - cp -rf /home/ubuntu/lgtm/vendor/golang.org /home/ubuntu/.go_workspace/src/golang.org
     - cp -rf /home/ubuntu/lgtm/vendor/gopkg.in /home/ubuntu/.go_workspace/src/gopkg.in
-    
 
 dependencies:
   override:
@@ -17,6 +16,10 @@ dependencies:
     - go get -u github.com/jteeuwen/go-bindata/...
     - make gen
     - GOOS=linux GOARCH=amd64 go build -o lgtm
+
+test:
+  override:
+    exit 0
 
 deployment:
   staging:
