@@ -2,6 +2,15 @@ machine:
   environment:
     APP_NAME: lgtm
 
+checkout:
+  post:
+    - mkdir -p /home/ubuntu/.go_workspace/src/github.com/lgtmco
+    - ln -s /home/ubuntu/lgtm /home/ubuntu/.go_workspace/src/github.com/AusDTO/lgtm
+    - cp -R /home/ubuntu/lgtm/vendor/github.com/* /home/ubuntu/.go_workspace/src/github.com/
+    - cp -rf /home/ubuntu/lgtm/vendor/golang.org /home/ubuntu/.go_workspace/src/golang.org
+    - cp -rf /home/ubuntu/lgtm/vendor/gopkg.in /home/ubuntu/.go_workspace/src/gopkg.in
+
+
 dependencies:
   override:
     - go get -u github.com/vektra/mockery/...
