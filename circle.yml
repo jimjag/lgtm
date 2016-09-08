@@ -4,7 +4,7 @@ machine:
 
 checkout:
   post:
-    - mkdir -p /home/ubuntu/.go_workspace/src/github.com/lgtmco
+    - mkdir -p /home/ubuntu/.go_workspace/src/github.com/AusDTO
     - ln -s /home/ubuntu/lgtm /home/ubuntu/.go_workspace/src/github.com/AusDTO/lgtm
     - cp -R /home/ubuntu/lgtm/vendor/github.com/* /home/ubuntu/.go_workspace/src/github.com/
     - cp -rf /home/ubuntu/lgtm/vendor/golang.org /home/ubuntu/.go_workspace/src/golang.org
