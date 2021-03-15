@@ -1,6 +1,6 @@
 [![Build Status](http://beta.drone.io/api/badges/lgtmco/lgtm/status.svg)](http://beta.drone.io/lgtmco/lgtm)
 
-LGTM is a simple pull request approval system using GitHub protected branches and maintainers files. Pull requests are locked and cannot be merged until the minimum number of approvals are received. Project maintainers can indicate their approval by commenting on the pull request and including LGTM, looks good to me, in their approval text. For more information please see the documentation at https://lgtm.co/docs
+LGTM is a simple pull request approval system using GitHub protected branches and maintainers files. Pull requests are locked and cannot be merged until the minimum number of approvals are received. Project maintainers can indicate their approval by commenting on the pull request and including LGTM (looks good to me) in their approval text. For more information please see the documentation at https://lgtm.co/docs
 
 ### Status
 
@@ -8,7 +8,7 @@ LGTM is actively used by thousands of repositories. The lack of commit activity 
 
 ### Development
 
-LGTM is meant to be extremely simple and focused and is largely considered feature-complete. The author is certainly interested in minor improvements and bug fixes, but is not interested in major enhancements. Feel free to fork the project and extand (and even re-brand) as you see fit.
+LGTM is meant to be extremely simple and focused and is largely considered feature-complete. The author is certainly interested in minor improvements and bug fixes, but is not interested in major enhancements. Feel free to fork the project and extend (and even re-brand) as you see fit.
 
 ### Setup
 
@@ -34,3 +34,7 @@ make build   # Build the binary
 ```
 
 If you are having trouble building this project please reference its .drone.yml file. Everything you need to know about building LGTM is defined in that file.
+
+### Disclaimer
+
+LGTM is a trademark of Semmle, Ltd (www.lgtm.com). The use of the LGTM mark and name on this page shall not imply any affiliation with or endorsement by Semmle, Ltd.
